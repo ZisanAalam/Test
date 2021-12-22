@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <body>
+        <input type="text" id="name">
+        <button onClick="junping()">check</button>
+        <p id="demo"></p>
+        <script>
+            function junping(){
+                var name = document.getElementById("name").value;
+                name = name.toLowerCase();
+                var reg = /\s/g;
+                var name1 = name.replace(reg,'');
+                var arr = Array.from(name1);
+                var len = arr.length;
+                var sum = 0;
+                for(var i = 0; i<len; i++){
+                    sum += name1.charCodeAt(i);
+                    console.log(name1.charCodeAt(i));
+                }
+                
+                function value(sum){
+                   var len1 = sum.length;
+                    var sum1 = 0;
+                    for(var i=0; i<len1; i++){
+                        console.log(sum1+=arr1[i]);
+                        sum1+= sum.charAt(i);
+                    }
+                    if(sum1.length<10){
+                        return sum1;   
+                    }
+                    else
+                        value(sum1);
+                };
+                var a = value(sum);
+                document.getElementById("demo").innerHTML= a;
+                
+            }
+        </script>
+    </body>
+</html>
